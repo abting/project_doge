@@ -1,0 +1,133 @@
+$date
+  Thu Jul  2 15:58:57 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module previous_state_register_tb $end
+$var reg 1 ! in_a $end
+$var reg 1 " in_b $end
+$var reg 2 # output[1:0] $end
+$var reg 1 $ clkgen $end
+$scope module test_unit $end
+$var reg 1 % a $end
+$var reg 1 & b $end
+$var reg 2 ' prev_state[1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+1!
+1"
+bUU #
+1$
+1%
+1&
+bUU '
+#5000000
+0"
+b10 #
+0$
+0&
+b10 '
+#10000000
+0!
+1$
+0%
+#15000000
+1"
+b01 #
+0$
+1&
+b01 '
+#20000000
+1!
+1$
+1%
+#25000000
+0"
+b10 #
+0$
+0&
+b10 '
+#30000000
+0!
+1$
+0%
+#35000000
+1"
+b01 #
+0$
+1&
+b01 '
+#40000000
+1!
+1$
+1%
+#45000000
+0"
+b10 #
+0$
+0&
+b10 '
+#50000000
+0!
+1$
+0%
+#55000000
+1"
+b01 #
+0$
+1&
+b01 '
+#60000000
+1!
+1$
+1%
+#65000000
+0"
+b10 #
+0$
+0&
+b10 '
+#70000000
+0!
+1$
+0%
+#75000000
+1"
+b01 #
+0$
+1&
+b01 '
+#80000000
+1!
+1$
+1%
+#85000000
+0"
+b10 #
+0$
+0&
+b10 '
+#90000000
+0!
+1$
+0%
+#95000000
+1"
+b01 #
+0$
+1&
+b01 '
+#100000000
+1!
+1$
+1%
