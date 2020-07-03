@@ -1,0 +1,207 @@
+$date
+  Fri Jul  3 09:22:39 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module previous_state_register_tb $end
+$var reg 1 ! in_a_cw $end
+$var reg 1 " in_b_cw $end
+$var reg 1 # in_b_ccw $end
+$var reg 1 $ in_a_ccw $end
+$var reg 2 % output_cw[1:0] $end
+$var reg 2 & output_ccw[1:0] $end
+$var reg 1 ' clkgen $end
+$scope module test_unit_cw $end
+$var reg 1 ( a $end
+$var reg 1 ) b $end
+$var reg 2 * prev_state[1:0] $end
+$upscope $end
+$scope module test_unit_ccw $end
+$var reg 1 + a $end
+$var reg 1 , b $end
+$var reg 2 - prev_state[1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+1!
+1"
+1#
+0$
+bUU %
+bUU &
+1'
+1(
+1)
+bUU *
+0+
+1,
+bUU -
+#5000000
+0"
+0#
+b10 %
+b00 &
+0'
+0)
+b10 *
+0,
+b00 -
+#10000000
+0!
+1$
+1'
+0(
+1+
+#15000000
+1"
+1#
+b01 %
+b11 &
+0'
+1)
+b01 *
+1,
+b11 -
+#20000000
+1!
+0$
+1'
+1(
+0+
+#25000000
+0"
+0#
+b10 %
+b00 &
+0'
+0)
+b10 *
+0,
+b00 -
+#30000000
+0!
+1$
+1'
+0(
+1+
+#35000000
+1"
+1#
+b01 %
+b11 &
+0'
+1)
+b01 *
+1,
+b11 -
+#40000000
+1!
+0$
+1'
+1(
+0+
+#45000000
+0"
+0#
+b10 %
+b00 &
+0'
+0)
+b10 *
+0,
+b00 -
+#50000000
+0!
+1$
+1'
+0(
+1+
+#55000000
+1"
+1#
+b01 %
+b11 &
+0'
+1)
+b01 *
+1,
+b11 -
+#60000000
+1!
+0$
+1'
+1(
+0+
+#65000000
+0"
+0#
+b10 %
+b00 &
+0'
+0)
+b10 *
+0,
+b00 -
+#70000000
+0!
+1$
+1'
+0(
+1+
+#75000000
+1"
+1#
+b01 %
+b11 &
+0'
+1)
+b01 *
+1,
+b11 -
+#80000000
+1!
+0$
+1'
+1(
+0+
+#85000000
+0"
+0#
+b10 %
+b00 &
+0'
+0)
+b10 *
+0,
+b00 -
+#90000000
+0!
+1$
+1'
+0(
+1+
+#95000000
+1"
+1#
+b01 %
+b11 &
+0'
+1)
+b01 *
+1,
+b11 -
+#100000000
+1!
+0$
+1'
+1(
+0+
