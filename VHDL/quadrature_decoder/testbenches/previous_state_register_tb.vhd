@@ -14,28 +14,39 @@ component previous_state_register is
 	);
 end component;
 
-for test_unit : previous_state_register use entity WORK.previous_state_register(behav_arch);
+for test_unit_cw : previous_state_register use entity WORK.previous_state_register(behav_arch);
+for test_unit_ccw : previous_state_register use entity WORK.previous_state_register(behav_arch);
 
-signal in_A, in_B : std_logic := '1';
-signal output : std_logic_vector(1 downto 0);
+signal in_A_cw, in_B_cw, in_B_ccw : std_logic := '1';
+signal in_A_ccw : std_logic := '0';
+signal output_cw, output_ccw : std_logic_vector(1 downto 0);
 signal clkgen : std_logic := '1';
 
 begin
 
-	test_unit : previous_state_register port map(
-		A => in_A,
-		B => in_B,
-		prev_state => output
+	test_unit_cw : previous_state_register port map(
+		A => in_A_cw,
+		B => in_B_cw,
+		prev_state => output_cw
+	);
+
+	test_unit_ccw : previous_state_register port map(
+		A => in_A_ccw,
+		B => in_B_ccw,
+		prev_state => output_ccw
 	);
 
 	-- CW signal process with T = 20 ns
-	in_A <= not in_A after 10 ns;
-	clkgen <= not clkgen after 5 ns;
+	in_A_cw <= not in_A_cw after 10 ns;
+	-- CCW signal process with T = 20 ns
+	in_A_ccw <= not in_A_ccw after 10 ns; 
 	
-	process(clkgen,in_B)
+	clkgen <= not clkgen after 5 ns;
+	process(clkgen,in_B_cw,in_B_ccw)
 	begin
 		if(clkgen'event and clkgen = '0') then
-			in_B <= not in_B;
+			in_B_cw <= not in_B_cw;
+			in_B_ccw <= not in_B_ccw;
 		end if;
 	end process;
 
