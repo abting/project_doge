@@ -1,6 +1,6 @@
 # Quadrature Decoder
 
-The quadrature decoder is a VHDL component that computes the angular direction, angular position and anglar speed of a incremental "quadrature" encoder.
+The quadrature decoder is a VHDL component that computes the angular direction, angular position and anglar speed of an incremental "quadrature" encoder.
 
 ## Architecture
 
@@ -50,7 +50,7 @@ The direction of rotation is as follows:
 | 70ns - 110ns  | CCW       |
 | 110ns - 130ns | CW        |
 
-Notice that the change in direction at t=20ns is not captured by the component (i.e. the `dir` bit indicated a CW direction). This is because the next change in direction happens exactly at 30ns, or 10ns after the initial change: which is exactly 1/2 of a pulse in this scenario.
+Notice that the change in direction at t=20ns is not captured by the component (i.e. the `direction` bit indicated a CW direction). This is because the next change in direction happens exactly at 30ns, or 10ns after the initial change: which is exactly 1/2 of a pulse in this scenario.
 
 On the other hand, the change of direction at 70ns is caught after 10ns (1/2 a pulse) since the next change does not happen until t=110ns.
 
