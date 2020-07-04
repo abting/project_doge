@@ -1,13 +1,25 @@
 v 4
-file . "direction_computer.vhd" "da53a84a0e2bb814d91bd2310e43b576abaf69e4" "20200703160021.462":
-  entity direction_computer at 1( 0) + 0 on 29;
-  architecture behav_arch of direction_computer at 13( 461) + 0 on 30;
-file . "testbenches/previous_state_register_tb.vhd" "04cc512b110024e5cbd8edb2e61b54b63b174f1d" "20200703131832.688":
-  entity previous_state_register_tb at 1( 0) + 0 on 27;
-  architecture tb_arch of previous_state_register_tb at 7( 114) + 0 on 28;
-file . "previous_state_register.vhd" "102af3d90d9c54279c78cd272c69c7b376bde8f1" "20200702192852.649":
-  entity previous_state_register at 1( 0) + 0 on 11;
-  architecture behav_arch of previous_state_register at 12( 214) + 0 on 12;
-file . "testbenches/direction_computer_tb.vhd" "b6e1fec7a059c7396e032c978803bb0abe45e5a4" "20200703162452.456":
-  entity direction_computer_tb at 1( 0) + 0 on 37;
-  architecture tb_arch of direction_computer_tb at 7( 104) + 0 on 38;
+file . "neg_edge_detector.vhd" "901cbee41205993818f28561b001039f9c9b296c" "20200703231601.557":
+  entity neg_edge_detector at 1( 0) + 0 on 85;
+  architecture rtl of neg_edge_detector at 13( 212) + 0 on 86;
+file . "direction_computer.vhd" "1627519c7788590370b359ff20a9323c160ce6df" "20200703210733.511":
+  entity direction_computer at 1( 0) + 0 on 67;
+  architecture behav_arch of direction_computer at 14( 602) + 0 on 68;
+file . "testbenches/previous_state_register_tb.vhd" "ad3958497d8c77d13f57273744468a3a2b339ea5" "20200703210101.882":
+  entity previous_state_register_tb at 1( 0) + 0 on 65;
+  architecture tb_arch of previous_state_register_tb at 7( 114) + 0 on 66;
+file . "previous_state_register.vhd" "cec11649cc8070e488e6f9c6f6850be492c94f67" "20200703210055.593":
+  entity previous_state_register at 1( 0) + 0 on 63;
+  architecture behav_arch of previous_state_register at 13( 353) + 0 on 64;
+file . "testbenches/direction_computer_tb.vhd" "984f52becccdf51e0de6eb94fb2c22ae014a011a" "20200703210807.414":
+  entity direction_computer_tb at 1( 0) + 0 on 69;
+  architecture tb_arch of direction_computer_tb at 7( 104) + 0 on 70;
+file . "position_computer.vhd" "348115eef7df9f209e84b5296b4f08eedcdcf427" "20200704133703.861":
+  entity position_computer at 1( 0) + 0 on 131;
+  architecture behav_arch of position_computer at 15( 285) + 0 on 132;
+file . "testbenches/position_computer_tb.vhd" "20142c908b3188847896b0a245d9149821740658" "20200704140132.639":
+  entity position_computer_tb at 1( 0) + 0 on 157;
+  architecture tb_arch of position_computer_tb at 7( 102) + 0 on 158;
+file . "pos_edge_detector.vhd" "07861510c39f48143818cf49290126402cdb2107" "20200703231557.548":
+  entity pos_edge_detector at 1( 0) + 0 on 83;
+  architecture rtl of pos_edge_detector at 13( 212) + 0 on 84;
