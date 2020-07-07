@@ -4,24 +4,26 @@ The quadrature decoder is a VHDL component that computes the angular direction, 
 
 ## Architecture
 
-The quadrature decoder is made up of 4 different internal blocks, each a VHDL component:
-- previous_state_register.vhd
-- direction_computer.vhd
-- position_computer.vhd
-- speed_computer.vhd
+As can be seen in its conceptual diagram in Figure 1 below, the quadrature decoder is composed of 3 internat component:
+1. The direction and position computer (dir_pos_computer.vhd)
+2. the spee computer (speed_computer.vhd)
+3. and finally, the change detecro (change_detector.vhd)
 
-### Conceptual diagrams
-- [quadrature decoder structural architecture](conceptual_diagrams/quadrature_decoder_conceptual_diagram.png)
-- [previous state register](conceptual_diagrams/quadrature_decoder_conceptual_diagram_previous_state_register.png)
-- [direction computer](conceptual_diagrams/quadrature_decoder_conceptual_diagram_direction_computer.png)
-- [position computer](conceptual_diagrams/quadrature_decoder_conceptual_diagram_position_computer.png)
-- [speed computer](conceptual_diagrams/quadrature_decoder_conceptual_diagram_speed_computer.png)
+### Inputs
+The quadrature decoder taken in the following inputs:
+- The quadrature signal of the incremental decoder,
+- the Z_index channel (where applicable) of the incremental decoder,
+- a global reset (asserted) signal,
+- and a global clock signal.
 
-### Previous State Register
-This component computes the state of channels A and B on the encoder prior to a rising of falling edge of the signal in channel A.
+### Outputs
+The quadrature decoder has 3 different outputs:
+- The direction of rotation (1-bit number): 1, when A leads B; 0 when B leads A,
+- the speed of rotation (unsigned 32-bit number) in 1/4 of a pulse (of channel A or B) per milisecond,
+- and the position in (signed 13-bit number) 1/4 of a pulse (of channel A or B);
 
-### Direction Computer
-This component computes the angular direction of the rotation encoder (CW or CCW). It does so by looking at the state of channels A and B just before the rising or falling edge of the signal in channel A, and comparing it to the new state of said channels.
+### Direction and Position Computer
+This component computes the angular direction of the rotation encoder (CW or CCW). It does so by looking at the state of channels A and B just before the rising or falling edge of the signal in channel A, and comparing it to the new state of said channels. It also calculates the angular position of the encoder by adding or subtracting from a counted immediately after a change in state. For a CW chage, the counter is incremented, and it is decremented for a CCW change
 
 The conditions to determine CW and CCW rotation are:
   
