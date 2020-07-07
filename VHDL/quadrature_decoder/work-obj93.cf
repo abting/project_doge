@@ -1,25 +1,31 @@
 v 4
-file . "neg_edge_detector.vhd" "901cbee41205993818f28561b001039f9c9b296c" "20200703231601.557":
-  entity neg_edge_detector at 1( 0) + 0 on 85;
-  architecture rtl of neg_edge_detector at 13( 212) + 0 on 86;
-file . "direction_computer.vhd" "1627519c7788590370b359ff20a9323c160ce6df" "20200703210733.511":
-  entity direction_computer at 1( 0) + 0 on 67;
-  architecture behav_arch of direction_computer at 14( 602) + 0 on 68;
-file . "testbenches/previous_state_register_tb.vhd" "ad3958497d8c77d13f57273744468a3a2b339ea5" "20200703210101.882":
-  entity previous_state_register_tb at 1( 0) + 0 on 65;
-  architecture tb_arch of previous_state_register_tb at 7( 114) + 0 on 66;
-file . "previous_state_register.vhd" "cec11649cc8070e488e6f9c6f6850be492c94f67" "20200703210055.593":
-  entity previous_state_register at 1( 0) + 0 on 63;
-  architecture behav_arch of previous_state_register at 13( 353) + 0 on 64;
-file . "testbenches/direction_computer_tb.vhd" "984f52becccdf51e0de6eb94fb2c22ae014a011a" "20200703210807.414":
-  entity direction_computer_tb at 1( 0) + 0 on 69;
-  architecture tb_arch of direction_computer_tb at 7( 104) + 0 on 70;
-file . "position_computer.vhd" "348115eef7df9f209e84b5296b4f08eedcdcf427" "20200704133703.861":
-  entity position_computer at 1( 0) + 0 on 131;
-  architecture behav_arch of position_computer at 15( 285) + 0 on 132;
-file . "testbenches/position_computer_tb.vhd" "20142c908b3188847896b0a245d9149821740658" "20200704140132.639":
-  entity position_computer_tb at 1( 0) + 0 on 157;
-  architecture tb_arch of position_computer_tb at 7( 102) + 0 on 158;
-file . "pos_edge_detector.vhd" "07861510c39f48143818cf49290126402cdb2107" "20200703231557.548":
-  entity pos_edge_detector at 1( 0) + 0 on 83;
-  architecture rtl of pos_edge_detector at 13( 212) + 0 on 84;
+file . "testbenches/quadrature_decoder_tb.vhd" "31528bc2d4c84585d90bd60cfcc27f63bf0bc6da" "20200707151503.456":
+  entity quadrature_decoder_tb at 1( 0) + 0 on 193;
+  architecture tb_arch of quadrature_decoder_tb at 7( 104) + 0 on 194;
+file . "change_detector.vhd" "3dbc72a0617520fe9db027668b7d05798c2c4933" "20200706201859.263":
+  entity change_detector at 1( 0) + 0 on 41;
+  architecture two_stage_arch of change_detector at 13( 241) + 0 on 42;
+file . "dir_pos_computer.vhd" "02f55a13c556c3f7fb99fb3fc09094e00823a30b" "20200707142753.191":
+  entity dir_pos_computer at 1( 0) + 0 on 153;
+  architecture behav_arch of dir_pos_computer at 15( 283) + 0 on 154;
+file . "speed_computer.vhd" "3bbcd4a7df3ca510411cefa64d4e204be8faaa22" "20200707142845.751":
+  entity speed_computer at 1( 0) + 0 on 159;
+  architecture struct_arch of speed_computer at 15( 286) + 0 on 160;
+file . "neg_edge_detector.vhd" "e98e3a3ff93a376e8d6ffbe41dec1edacb646551" "20200707142612.137":
+  entity neg_edge_detector at 1( 0) + 0 on 149;
+  architecture rtl of neg_edge_detector at 13( 212) + 0 on 150;
+file . "clk_timer.vhd" "923c464467c5b22bc6ce814da28577c899707019" "20200706190855.653":
+  entity clk_timer at 1( 0) + 0 on 11;
+  architecture rtl of clk_timer at 14( 247) + 0 on 12;
+file . "pulse_counter.vhd" "a2aca07dccfb5cde02d80dc7b5627cfe22287c0b" "20200706190910.799":
+  entity pulse_counter at 1( 0) + 0 on 15;
+  architecture behav_arch of pulse_counter at 13( 212) + 0 on 16;
+file . "testbenches/speed_computer_tb.vhd" "5dafbfa14c235010ec4ea067259fd260123bb363" "20200706194808.813":
+  entity speed_computer_tb at 1( 0) + 0 on 31;
+  architecture tb_arch of speed_computer_tb at 7( 96) + 0 on 32;
+file . "quadrature_decoder.vhd" "225db6e971a92d3031c67fb972bff57619e4be2a" "20200707151502.416":
+  entity quadrature_decoder at 1( 0) + 0 on 191;
+  architecture struct_arch of quadrature_decoder at 18( 380) + 0 on 192;
+file . "testbenches/neg_edge_detector_tb.vhd" "b64b77eb9298c17671b9f7851c6670a2f8f2fe07" "20200707142620.165":
+  entity neg_edge_detector_tb at 1( 0) + 0 on 151;
+  architecture tb_arch of neg_edge_detector_tb at 7( 102) + 0 on 152;
