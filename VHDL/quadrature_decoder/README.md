@@ -36,4 +36,14 @@ Figure 2 - State machine for the dir_pos_computer component
 When a state change is detected, the direction bit is pulled high for a CW rotation and pulled low for a CCW rotation.
 
 #### Speed Computer
+
+<img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/speed_computer.png">
+Figure 3 - Conceptual Diagram of the Speed Computer Component
+
+<img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/neg_edge_detector.png">
+Figure 4 - Conceptual Diagram of the Falling Edge Detector
+
 #### Change Detector
+
+<img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/change_detector.png">
+Figure 5 - Conceptual Diagram of the Change Detector Component
