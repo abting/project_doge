@@ -10,6 +10,7 @@ As can be seen in its conceptual diagram in Figure 1 below, the quadrature decod
 3. and finally, the change detector (change_detector.vhd)
 
 <img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/quadrature_encoder_decoder.png">
+
 **Figure 1 - Conceptual Diagram of the Structural Architecture of the Quadrature Decoder**
 
 ### Inputs
