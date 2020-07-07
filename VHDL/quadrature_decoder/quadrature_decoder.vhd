@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity quadrature_decoder is
-	generic(timer_threshold_cycles : integer);
+	generic(timer_threshold_cycles : integer := 16000);
 	port(
 		A 			: in 	std_logic;
 		B 			: in 	std_logic;
