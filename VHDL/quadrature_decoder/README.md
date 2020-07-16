@@ -10,7 +10,8 @@ As can be seen in its conceptual diagram in Figure 1 below, the quadrature decod
 3. and finally, the change detector (change_detector.vhd)
 
 <img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/quadrature_encoder_decoder.png">
-Figure 1 - Conceptual Diagram of the Structural Architecture of the Quadrature Decoder 
+
+**Figure 1 - Conceptual Diagram of the Structural Architecture of the Quadrature Decoder**
 
 ### Inputs
 The quadrature decoder taken in the following inputs:
@@ -31,30 +32,43 @@ The quadrature decoder has 3 different outputs:
 This component computes the angular direction of the encoder (CW or CCW). It does so by looking at the state of channels A and B as shown in Fig 2 below. It also calculates the angular position of the encoder by adding or subtracting from a counted immediately after a change in state. For a CW chage, the counter is incremented, and it is decremented for a CCW change
 
 <img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/dir_pos_computer.png">
-Figure 2 - State machine for the dir_pos_computer component
+
+**Figure 2 - State machine for the dir_pos_computer component**
 
 When a state change is detected, the direction bit is pulled high for a CW rotation and pulled low for a CCW rotation.
 
 #### Speed Computer
 The Speed Computer is the component in charge of computing the angular speed of the encoder. It does so by sampling the change in position of the encoder every 1 mili-second. By default, a 16MHz clock is assumed to be available to the component.
 
-As can be seen in Figure 3 below, the component is itself made up of 3 modules:
+As can be seen in Figure 3.1 below, the component is itself made up of 3 modules:
 1. The clock timer,
 2. the pulse timer, and finally,
 3. a falling edge detector.
 
-The conceptual diagrams for the clock timer and the pulse timer are shown in Figure 3.
+<img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/speed_computer_struct_arch.png">
 
-<img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/speed_computer.png">
-Figure 3 - Conceptual Diagram of the Speed Computer Component
+**Figure 3.1 - Conceptual Diagram of the Speed Computer Component**
+
+
+The conceptual diagrams for the clock timer and the pulse timer are shown in Figure 3.2.
+
+<img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/speed_computer_internal_arch.png">
+
+**Figure 3.2 - Conceptual Diagram of the Speed Computer Component's internal components**
+
 
 The conceptual diagram of the falling edge detector is shown in Figure 4 below.
 
 <img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/neg_edge_detector.png">
-Figure 4 - Conceptual Diagram of the Falling Edge Detector
+
+
+**Figure 4 - Conceptual Diagram of the Falling Edge Detector**
+
 
 #### Change Detector
 The Change Detector is the component responsible for detecting a change in position. Whenever a change in position is detected, a pulse is produced to signal the event. The conceptual diagram of this component is shown in Figure 5 below.
 
 <img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/conceptual_diagrams/change_detector.png">
-Figure 5 - Conceptual Diagram of the Change Detector Component
+
+
+**Figure 5 - Conceptual Diagram of the Change Detector Component**
