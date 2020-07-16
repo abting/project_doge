@@ -1,31 +1,31 @@
 v 4
-file . "testbenches/quadrature_decoder_tb.vhd" "31528bc2d4c84585d90bd60cfcc27f63bf0bc6da" "20200707151503.456":
-  entity quadrature_decoder_tb at 1( 0) + 0 on 193;
-  architecture tb_arch of quadrature_decoder_tb at 7( 104) + 0 on 194;
-file . "change_detector.vhd" "3dbc72a0617520fe9db027668b7d05798c2c4933" "20200706201859.263":
-  entity change_detector at 1( 0) + 0 on 41;
-  architecture two_stage_arch of change_detector at 13( 241) + 0 on 42;
-file . "dir_pos_computer.vhd" "02f55a13c556c3f7fb99fb3fc09094e00823a30b" "20200707142753.191":
-  entity dir_pos_computer at 1( 0) + 0 on 153;
-  architecture behav_arch of dir_pos_computer at 15( 283) + 0 on 154;
-file . "speed_computer.vhd" "3bbcd4a7df3ca510411cefa64d4e204be8faaa22" "20200707142845.751":
-  entity speed_computer at 1( 0) + 0 on 159;
-  architecture struct_arch of speed_computer at 15( 286) + 0 on 160;
-file . "neg_edge_detector.vhd" "e98e3a3ff93a376e8d6ffbe41dec1edacb646551" "20200707142612.137":
-  entity neg_edge_detector at 1( 0) + 0 on 149;
-  architecture rtl of neg_edge_detector at 13( 212) + 0 on 150;
-file . "clk_timer.vhd" "923c464467c5b22bc6ce814da28577c899707019" "20200706190855.653":
-  entity clk_timer at 1( 0) + 0 on 11;
-  architecture rtl of clk_timer at 14( 247) + 0 on 12;
-file . "pulse_counter.vhd" "a2aca07dccfb5cde02d80dc7b5627cfe22287c0b" "20200706190910.799":
-  entity pulse_counter at 1( 0) + 0 on 15;
-  architecture behav_arch of pulse_counter at 13( 212) + 0 on 16;
-file . "testbenches/speed_computer_tb.vhd" "5dafbfa14c235010ec4ea067259fd260123bb363" "20200706194808.813":
-  entity speed_computer_tb at 1( 0) + 0 on 31;
-  architecture tb_arch of speed_computer_tb at 7( 96) + 0 on 32;
-file . "quadrature_decoder.vhd" "225db6e971a92d3031c67fb972bff57619e4be2a" "20200707151502.416":
-  entity quadrature_decoder at 1( 0) + 0 on 191;
-  architecture struct_arch of quadrature_decoder at 18( 380) + 0 on 192;
 file . "testbenches/neg_edge_detector_tb.vhd" "b64b77eb9298c17671b9f7851c6670a2f8f2fe07" "20200707142620.165":
   entity neg_edge_detector_tb at 1( 0) + 0 on 151;
   architecture tb_arch of neg_edge_detector_tb at 7( 102) + 0 on 152;
+file . "quadrature_decoder.vhd" "d1907bad6d7bf0ec403d15204d9e91c6ddbbacde" "20200716204108.617":
+  entity quadrature_decoder at 1( 0) + 0 on 205;
+  architecture struct_arch of quadrature_decoder at 18( 389) + 0 on 206;
+file . "testbenches/speed_computer_tb.vhd" "5dafbfa14c235010ec4ea067259fd260123bb363" "20200706194808.813":
+  entity speed_computer_tb at 1( 0) + 0 on 31;
+  architecture tb_arch of speed_computer_tb at 7( 96) + 0 on 32;
+file . "pulse_counter.vhd" "a2aca07dccfb5cde02d80dc7b5627cfe22287c0b" "20200706190910.799":
+  entity pulse_counter at 1( 0) + 0 on 15;
+  architecture behav_arch of pulse_counter at 13( 212) + 0 on 16;
+file . "clk_timer.vhd" "923c464467c5b22bc6ce814da28577c899707019" "20200706190855.653":
+  entity clk_timer at 1( 0) + 0 on 11;
+  architecture rtl of clk_timer at 14( 247) + 0 on 12;
+file . "neg_edge_detector.vhd" "e98e3a3ff93a376e8d6ffbe41dec1edacb646551" "20200707142612.137":
+  entity neg_edge_detector at 1( 0) + 0 on 149;
+  architecture rtl of neg_edge_detector at 13( 212) + 0 on 150;
+file . "speed_computer.vhd" "3bbcd4a7df3ca510411cefa64d4e204be8faaa22" "20200707142845.751":
+  entity speed_computer at 1( 0) + 0 on 159;
+  architecture struct_arch of speed_computer at 15( 286) + 0 on 160;
+file . "dir_pos_computer.vhd" "02f55a13c556c3f7fb99fb3fc09094e00823a30b" "20200707142753.191":
+  entity dir_pos_computer at 1( 0) + 0 on 153;
+  architecture behav_arch of dir_pos_computer at 15( 283) + 0 on 154;
+file . "change_detector.vhd" "3dbc72a0617520fe9db027668b7d05798c2c4933" "20200706201859.263":
+  entity change_detector at 1( 0) + 0 on 41;
+  architecture two_stage_arch of change_detector at 13( 241) + 0 on 42;
+file . "testbenches/quadrature_decoder_tb.vhd" "9361426a9888046ed29dfc1488889335d05cbc07" "20200716220746.299":
+  entity quadrature_decoder_tb at 1( 0) + 0 on 231;
+  architecture tb_arch of quadrature_decoder_tb at 7( 104) + 0 on 232;

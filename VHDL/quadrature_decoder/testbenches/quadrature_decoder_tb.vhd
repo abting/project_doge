@@ -24,16 +24,26 @@ architecture tb_arch of quadrature_decoder_tb is
     constant ClockPeriod      			: time := 1000 ms / ClockFrequencyHz;
     constant timer_threshold_cycles		: integer := ClockFrequencyHz / 1000; -- Clk cycles per mili-second (10^-3)
 
+    constant Clk_345600_Hz_Freq			: integer := 345600; -- 18 deg / ms
+    constant Clk_345600_Hz_Period		: time := 1000 ms / Clk_345600_Hz_Freq;
+
+	constant Clk_576000_Hz_Freq			: integer := 576000; -- 30 deg / ms
+    constant Clk_576000_Hz_Period		: time := 1000 ms / Clk_576000_Hz_Freq; 
+
     -- Signals
-    signal in_A, in_B, in_Z : std_logic := '0';
+    signal in_A, in_B,in_Z	: std_logic := '0';
     signal global_clk 		: std_logic := '0';
     signal global_reset		: std_logic := '1';
     signal position			: std_logic_vector(12 downto 0);
     signal direction		: std_logic;
     signal speed			: integer;
 
-    signal clkgen1,clkgen2,clkgen3,clkgen2_inv : std_logic := '0';
-    signal trigger			: integer := 0;
+    signal Clk_345600_Hz : std_logic := '0';
+    signal Clk_576000_Hz : std_logic := '0';
+
+    signal Clk_576000_Hz_inv : std_logic := '0';
+
+    signal trigger : integer := 0;
 
 begin
 
@@ -54,80 +64,58 @@ begin
 	-- Global clock process
 	global_clk <= not global_clk after ClockPeriod/2;
 
-	-- ASSUMPTIONS
-	-- Encoder has a resolution of 2048 PPR
-	-- Global clock frequency is 16MHz
-
-	-- TEST 1: DIRECTION, POSITION, AND SPEED
-
+	-- Global Reset
 	global_reset <= '0' after ClockPeriod*4;
 
-	clkgen1 <= not clkgen1 after ClockPeriod*200;
-	clkgen2 <= not clkgen2 after ClockPeriod*50;
-	clkgen3 <= not clkgen3 after ClockPeriod*100;
+	-- Clocks to simulate encoder rotation
+	Clk_345600_Hz <= not Clk_345600_Hz after Clk_345600_Hz_Period/2;
+	Clk_576000_Hz <= not Clk_576000_Hz after Clk_576000_Hz_Period/2;
 
-	clkgen2_inv <= not clkgen2;
+	Clk_576000_Hz_inv <= not Clk_576000_Hz;
 
-	-- Trigger used for different rotations
-	process
+	-- Trigger process: change of rotational parameters
+	p_triggers : process is
 	begin
-		wait for ClockPeriod*20000;
+		wait for 5000000 ns;
 		trigger <= 1;
-		wait for ClockPeriod*5000;
-		trigger <= 2;
-		wait for ClockPeriod*10000;
-		trigger <= 3;
-	end process;
+		wait;
+	end process p_triggers;
 
-	p_channel_B : process(clkgen1,clkgen2,clkgen3,in_B) is
+	-- B channel signal generation
+	p_channel_B : process(Clk_345600_Hz,Clk_576000_Hz_inv,in_B) is
 	begin
-		-- Rotate CW for 1/4 revolutions at 10dps
 		if(trigger = 0) then
-			if(rising_edge(clkgen1)) then
+			if(rising_edge(Clk_345600_Hz)) then
 				in_B <= not in_B;
 			end if;
-		-- Rotate CCW for 1/2 revolutions at 50dps
 		elsif(trigger = 1) then
-			if(rising_edge(clkgen2)) then
+			if(rising_edge(Clk_576000_Hz_inv)) then
 				in_B <= not in_B;
 			end if;
-		-- Rotate CW for 1/4 revolutions at 5dps
-		elsif(trigger = 2) then
-			if(rising_edge(clkgen3)) then
-				in_B <= not in_B;
-			end if;
-		else
 		end if;
 	end process p_channel_B;
 
-	p_channel_A : process(clkgen1,clkgen2,clkgen3,clkgen2_inv,in_A) is
+	-- A channel signal generation
+	p_channel_A : process(Clk_345600_Hz,Clk_576000_Hz,in_A) is
 	begin
-		-- Rotate CW for 1/4 revolutions at 10dps
 		if(trigger = 0) then
-			if(falling_edge(clkgen1)) then
+			if(falling_edge(Clk_345600_Hz)) then
 				in_A <= not in_A;
 			end if;
-		-- Rotate CCW for 1/2 revolutions at 50dps
 		elsif(trigger = 1) then
-			if(rising_edge(clkgen2_inv)) then
+			if(rising_edge(Clk_576000_Hz)) then
 				in_A <= not in_A;
 			end if;
-		-- Rotate CW for 1/4 revolutions at 5dps
-		elsif(trigger = 2) then
-			if(falling_edge(clkgen3)) then
-				in_A <= not in_A;
-			end if;
-		else
 		end if;
 	end process p_channel_A;
 
-	p_channel_Z : process(position,in_A) is
-	begin
-		if(position'event and position = "0000000110000") then
-			in_Z <= '1';
-		else
-			in_Z <= '0';
-		end if;
-	end process p_channel_Z;
+	--p_channel_Z : process(position,in_A) is
+	--begin
+		--if(position'event and position = "0000000110000") then
+		--	in_Z <= '1';
+		--else
+		--	in_Z <= '0';
+		--end if;
+	--end process p_channel_Z;
 
 end tb_arch;
