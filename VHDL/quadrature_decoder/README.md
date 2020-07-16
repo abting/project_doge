@@ -72,3 +72,14 @@ The Change Detector is the component responsible for detecting a change in posit
 
 
 **Figure 5 - Conceptual Diagram of the Change Detector Component**
+
+## Testbench
+In this following testbench, the following is simulatied:
+1. A 90 degree CW rotation completed at constant speed in 5 mili-seconds followed by
+2. a 60 degree CCW rotation completed at constant speed in 2 mili-seconds.
+
+Figure 6 shows an overview of the similation. One can see 3 cursors at 1ms, 5ms, and 7ms. The cursor at 1ms is there to show that the speed is updated every 1ms. The cursor at 5ms shows the position of the encoder after 5ms which should be the equivalent of 90 degrees. The last cursor at 7ms is there to show the position of the encoder after 2ms following the 5ms mark where the encoder started rotating in a CCW motion for 60 degrees.
+
+<img src="">
+
+**Figure 6 - Testbench Overview**
