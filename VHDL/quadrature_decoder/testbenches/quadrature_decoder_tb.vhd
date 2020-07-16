@@ -24,10 +24,10 @@ architecture tb_arch of quadrature_decoder_tb is
     constant ClockPeriod      			: time := 1000 ms / ClockFrequencyHz;
     constant timer_threshold_cycles		: integer := ClockFrequencyHz / 1000; -- Clk cycles per mili-second (10^-3)
 
-    constant Clk_345600_Hz_Freq			: integer := 345600; -- 18 deg / ms
+    constant Clk_345600_Hz_Freq			: integer := 21600; -- 10,800 pulses/sec
     constant Clk_345600_Hz_Period		: time := 1000 ms / Clk_345600_Hz_Freq;
 
-	constant Clk_576000_Hz_Freq			: integer := 576000; -- 30 deg / ms
+	constant Clk_576000_Hz_Freq			: integer := 36000; -- 18,000 puses/sec
     constant Clk_576000_Hz_Period		: time := 1000 ms / Clk_576000_Hz_Freq; 
 
     -- Signals
