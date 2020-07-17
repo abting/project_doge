@@ -109,7 +109,3 @@ In Figure 6.2 below, it can be seen that just after the 5ms mark the position is
 In Figure 6.3 below, it is shown that at the 7ms mark, the position is 72 quarters of a pulse. This is equivalent to 216 quarters of a pulse (i.e. 90deg) plus -144 quarters of a pulse (i.e. -60deg) or exactly 30 degrees. Note that the speed is 71 quarters of a pulse per ms just prior to the 7ms mark and 72 quarters of a pulse per ms just after. This is due to the imperfect simulation of the change of rotation as represented in channels A and B. Due to the method used in this testbench, one quarter of a pulse is lost right after the 5ms mark (see Figure 6.4 below).
 
 <img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/testbenches/tb_waveform_results/Fig%206_4.png">
-
-### 90deg CW for 5ms
-
-### 60deg CCW for 2ms
