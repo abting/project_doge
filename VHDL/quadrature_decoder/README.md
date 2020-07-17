@@ -78,8 +78,38 @@ In this following testbench, the following is simulatied:
 1. A 90 degree CW rotation completed at constant speed in 5 mili-seconds followed by
 2. a 60 degree CCW rotation completed at constant speed in 2 mili-seconds.
 
+### Assumptions
+- Encoder Resolution: 24 PPR
+- Change in position updated on rising and falling edges of both channels (each quarter of a pulse).
+- Encoder is geared with the shaft of a motor with a gear ratio of 9.
+
+Actual resolution: 24 x 4 x 9 = 864 quarter of a pulse per revolution (OR 3456 PPR).
+
+### Overview
+
 Figure 6 shows an overview of the similation. One can see 3 cursors at 1ms, 5ms, and 7ms. The cursor at 1ms is there to show that the speed is updated every 1ms. The cursor at 5ms shows the position of the encoder after 5ms which should be the equivalent of 90 degrees. The last cursor at 7ms is there to show the position of the encoder after 2ms following the 5ms mark where the encoder started rotating in a CCW motion for 60 degrees.
 
-<img src="">
+<img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/testbenches/tb_waveform_results/Fig%206.png">
 
 **Figure 6 - Testbench Overview**
+
+### Speed
+In Figure 6.1 below, it can be seen that after 1ms the encoder has rotated the equivalent of 43 quarters of a pulse (i.e. 17.92 degrees). The speed is shown to be updated to this number at the 1ms mark.
+
+**Figure 6.1 - 1ms mark**
+
+<img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/testbenches/tb_waveform_results/Fig%206_1.png">
+
+### 90deg CW rotation for 5 ms
+In Figure 6.2 below, it can be seen that just after the 5ms mark the position is 216 quarters of a pulse (i.e. 90degrees exactly). It should be noted that the position is updated AT the 5ms mark (documentation to follow for a detailed timing diagram of the position computer). Note that the speed is still 43 quarters of a pulse per milisecond.
+
+<img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/testbenches/tb_waveform_results/Fig%206_3.png">
+
+### 60deg CCW rotation for 2 ms
+In Figure 6.3 below, it is shown that at the 7ms mark, the position is 72 quarters of a pulse. This is equivalent to 216 quarters of a pulse (i.e. 90deg) plus -144 quarters of a pulse (i.e. -60deg) or exactly 30 degrees. Note that the speed is 71 quarters of a pulse per ms just prior to the 7ms mark and 72 quarters of a pulse per ms just after. This is due to the imperfect simulation of the change of rotation as represented in channels A and B. Due to the method used in this testbench, one quarter of a pulse is lost right after the 5ms mark (see Figure 6.4 below).
+
+<img src="https://github.com/abting/project_doge/blob/p_carva/quadrature_decoder/VHDL/quadrature_decoder/testbenches/tb_waveform_results/Fig%206_4.png">
+
+### 90deg CW for 5ms
+
+### 60deg CCW for 2ms
